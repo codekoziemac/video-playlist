@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Video Playlist</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="banner"><img src="images/website-nav-1.png" /></div>
+    <nav>
+      <div class="left-nav">
+        <img src="images/videohaeko-logo.png" id="ban" />
+      </div>
+      <div class="right-nav">
+        <img class="nav-icon" src="images/home.png" />
+        <a href="people.html"
+          ><img class="nav-icon" src="images/user-group.png"
+        /></a>
+      </div>
+    </nav>
+
+    <div class="videos-list">
+      <div class="video-container">
+        <video class="video" src="videos/vid1.mp4"></video>
+      </div>
+
+      <div class="video-container">
+        <video class="video" src="videos/vid2.mp4"></video>
+      </div>
+
+      <div class="video-container">
+        <video class="video" src="videos/vid3.mp4"></video>
+      </div>
+
+      <div class="video-container">
+        <video muted class="video" src="videos/vid4.mp4"></video>
+      </div>
+
+      <div class="video-container">
+        <video class="video" src="videos/vid5.mp4"></video>
+      </div>
+
+      <div class="video-container">
+        <video class="video" src="videos/vid6.mp4"></video>
+      </div>
+
+      <div class="video-container">
+        <video class="video" src="videos/vid7.mp4"></video>
+      </div>
+
+      <div class="video-container">
+        <video muted class="video" src="videos/vid8.mp4"></video>
+      </div>
+
+      <div class="video-container">
+        <video muted class="video" src="videos/vid9.mp4"></video>
+      </div>
+
+      <div class="video-container">
+        <video muted class="video" src="videos/vid10.mp4"></video>
+      </div>
+    </div>
+    <div class="pop-up">
+      <video controls class="hah" src="videos/vid10.mp4"></video>
+      <span>&times;</span>
+    </div>
+
+    <script>
+      document.querySelectorAll(".videos-list video").forEach((vid) => {
+        vid.onclick = () => {
+          document.querySelector(".pop-up").style.display = "block";
+          document.querySelector(".pop-up video").src = vid.getAttribute("src");
+          document.querySelector(".pop-up video").play();
+        };
+      });
+      document.querySelector(".pop-up span").onclick = () => {
+        document.querySelector(".pop-up").style.display = "none";
+        document.querySelector(".pop-up video").pause();
+      };
+    </script>
+  </body>
+</html>
